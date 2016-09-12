@@ -5,12 +5,10 @@ import forecastio
 from geopy.geocoders import Nominatim
 
 
-geolocator = Nominatim()
-
 
 
 def get_weather(address):
-    api_key=os.environ['weather_token']
+    api_key=os.environ = "868f44e931833f067fa78c7dfebb002d"
     geolocator = Nominatim()
     location = geolocator.geocode(address)
     latitude = location.latitude
@@ -19,3 +17,7 @@ def get_weather(address):
     summary = forecast.summary
     temperature = forecast.temperature
     return "{} and {}° at {}".format(summary, temperature, address)
+
+
+weather = get_weather("Oakland, CA")
+print (weather)

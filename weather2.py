@@ -5,8 +5,10 @@ import forecastio
 from geopy.geocoders import Nominatim
 
 
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 geolocator = Nominatim()
-
+api_key=os.environ['weather_token']
 
 
 def get_weather(address):
